@@ -254,7 +254,7 @@
 
 &emsp;&emsp;通过FileReader对象拿到图片的base64数据，然后设置为图片的src接着去监听图片的加载完成，加载完成之后获取图片实际高度和宽度设置为canvas容器的大小。最后通过canvas的toDataURL方法将canvas转换为base64。压缩的实现主要是通过toDataURL 的第二个参数，取值范围是0~1超出范围以0.962位默认值。
 
-&emsp;&emsp;这个方法有个缺点就是只能将图片压缩为jpg格式且压缩比例为0.5以下时失真非常严重。[查看JS文件](./minifyImg.js)
+&emsp;&emsp;这个方法有个缺点就是只能将图片压缩为jpg格式且压缩比例为0.5以下时失真非常严重。[查看JS文件](./example/minifyImg.js)
 
 &emsp;&emsp;核心代码如下：
 
