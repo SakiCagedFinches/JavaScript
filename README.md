@@ -6,7 +6,7 @@
 
 &emsp;&emsp;可通过传入长度重复输出当前字符串。ES6中已实现该方法。
 * 通过ES5实现
-```
+``` js
   String.prototype.repeat = function (len) {
     var str = this.toString();
     var res = '';
@@ -24,7 +24,7 @@
 ### 字符串补全
 
 #### 1.补全头部
-```
+``` js
   String.prototype.padStart = function (len, str) {
     let temp = this.toString();
     let res = '';
@@ -50,7 +50,7 @@
 
 #### 2.补全尾部
 
-```
+``` js
   String.prototype.padStart = function (len, str) {
     let temp = this.toString();
     let res = '';
@@ -85,7 +85,7 @@
 
 &emsp;&emsp;实现方法如下：
 
-```
+``` js
   var example = JSON.parse(JSON.stringify(data));
 ```
 
@@ -95,7 +95,7 @@
 
 &emsp;&emsp;实现方法如下：
 
-```
+``` js
   function deepClone (source) {
     if (!source && typeof source !== 'object') {
       throw new Error('error arguments', 'shallowClone');
@@ -121,7 +121,7 @@
 
 &emsp;&emsp;定义一个新数组，并存放原数组的第一个元素，然后将元素组一一和新数组的元素对比，若不同则存放在新数组中。
 
-```
+``` js
   function unique(arr){
 　　var res = [arr[0]];
 　　for (var i = 1, len1 = arr.length; i < len1; i++) {
@@ -144,7 +144,7 @@
 
 &emsp;&emsp;先将原数组排序，在与相邻的进行比较，如果不同则存入新数组。
 
-```
+``` js
   function unique(arr){
     var arr2 = arr.sort((a, b) => { return b - a; });
     var res = [arr[0]]
@@ -161,7 +161,7 @@
 
 &emsp;&emsp;每次取出原数组的元素，然后再对象中访问这个属性，如果存在就说明重复。
 
-```
+``` js
   function unique (arr) {
 　　var res = [];
     var josn = {}
@@ -184,13 +184,13 @@
 #### 4.通过ES6的Set方法去重
 
 * 通过扩展算符 rest参数
-```
+``` js
   function unique (arr) {
     return [...new Set(arr)];
   }
 ```
 * 通过Array对象方法
-```
+``` js
   function unique (arr) {
     return Array.from(new Set(arr));
   }
@@ -202,7 +202,7 @@
 
 ### 十六进制色转换为rgb方法
 
-```
+``` js
   function getRgb (str) {
     var reg = new RegExp(/^#[0-9a-zA-Z]{6}$/);
     // 验证参数是否为有效值
@@ -223,7 +223,7 @@
 
 ### 判断是否为移动端
 
-```
+``` js
   function isMobile () {
     return (/iphone|ipod|android.*mobile|windows.*phone|blackberry.*mobile/i.test(window.navigator.userAgent.toLowerCase()));
   }
@@ -231,7 +231,7 @@
 
 ### 序列化时间对象
 
-```
+``` js
   function formatTime(date) {
     var year = date.getFullYear()
     var month = date.getMonth() + 1
@@ -258,7 +258,7 @@
 
 &emsp;&emsp;核心代码如下：
 
-```
+``` js
   // 获取到file之后
   let  reader = new FileReader();
   
