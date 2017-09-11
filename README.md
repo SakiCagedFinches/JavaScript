@@ -11,7 +11,7 @@
     var str = this.toString();
     var res = '';
     if (isNaN(Number(len)))	{
-      throw new Error('error arguments params is not Number');
+      throw new Error('error arguments is not Number');
       return ;
     }
     for (let i = 0; i < len; i++) {
@@ -30,7 +30,7 @@
     let res = '';
     str = JSON.stringify(str);
     if (isNaN(Number(len)))	{
-      throw new Error('error arguments params is not Number');
+      throw new Error('error arguments is not Number');
     }
     if (temp.length >= len) {
       return temp;
