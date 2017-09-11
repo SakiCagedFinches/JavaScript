@@ -198,7 +198,7 @@
 
 -----------------------------------
 
-## 工具函数
+## 功能函数
 
 ### 十六进制色转换为rgb方法
 
@@ -218,6 +218,22 @@
     var r = num % 256;
     num = parseInt(num / 256);
     return `rgb(${r},${g},${b})`;
+  }
+```
+
+### 随机获取颜色
+
+``` js
+  function getRandomRGBA (opacity) {
+    let r = Math.round(Math.random() * 256),
+      g = Math.round(Math.random() * 256),
+      b = Math.round(Math.random() * 256),
+      a = Math.random();
+    if (opacity) {
+      return `rgba(${r}, ${g}, ${b}, ${a})`; 
+    } else {
+      return `rgb(${r}, ${g}, ${b})`;
+    }
   }
 ```
 
@@ -250,11 +266,31 @@
   }
 ```
 
+### 获取URL地址?后参数
+
+``` js
+  function getSearch() {
+    // 截取参数
+    let search = location.search.slice(1) ||
+                 location.href.slice(location.href.lastIndexOf('?'));
+    // 无参数时返回为空
+    if(!search) return null;
+    let list = search.split('&'),
+        res = {};
+    // 遍历参数数组
+    for (let i = 0, len = list.length; i < len; i++) {
+      let item = list[i].split('=');
+      res[item[0]] = item[1];
+    }
+    return res;
+  }
+```
+
 ### 压缩保存图片到本地
 
 &emsp;&emsp;通过FileReader对象拿到图片的base64数据，然后设置为图片的src接着去监听图片的加载完成，加载完成之后获取图片实际高度和宽度设置为canvas容器的大小。最后通过canvas的toDataURL方法将canvas转换为base64。压缩的实现主要是通过toDataURL 的第二个参数，取值范围是0~1超出范围以0.962位默认值。
 
-&emsp;&emsp;这个方法有个缺点就是只能将图片压缩为jpg格式且压缩比例为0.5以下时失真非常严重。[查看JS文件](./example/minifyImg.js)
+&emsp;&emsp;这个方法有个缺点就是只能将图片压缩为jpg格式且压缩比例为0.5以下时失真非常严重。点[这里](./example/minifyImg.js)查看JS文件
 
 &emsp;&emsp;核心代码如下：
 

@@ -1,7 +1,7 @@
 minifyImg({
   files: files,
   minify: minify,
-  canvas: cv,
+  canvas: canvas,
   list: list
 });
 
